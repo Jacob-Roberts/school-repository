@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b2d6ff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  padding: 1rem;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: #5995da;
+  height: 80px;
+  justify-content: space-around;
+}
+
+.header {
+  background-color: #b2d6ff;
+  font-weight: bold;
+}
+
+.content {
+  background-color: #eaedf0;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.sign-up {
+  background-color: #d6e9fe;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.feature-1 {
+  background-color: #f5cf8e;
+}
+
+.feature-2 {
+  background-color: #f09a9d;
+}
+
+.feature-3 {
+  background-color: #c8c6fa;
+  display: flex;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .sign-up,
+  .feature-1,
+  .feature-2,
+  .feature-3 {
+    width: 50%;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+  .feature-1,
+  .feature-2,
+  .feature-3 {
+    width: 33.3%;
+  }
+  .header {
+    height: 400px;
+  }
+  .sign-up {
+    height: 200px;
+    order: 1;
+  }
+  .content {
+    order: 2;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  background-color: #d6e9fe;
+  height: 200px;
+  flex: 1;
+}
+.footer-three {
+  flex: 2;
+}
+
+.footer-one,
+.footer-three {
+  background-color: #5995da;
+  flex: initial;
+  width: 300px;
+}
+
+.text-white {
+  color: white;
+}
