@@ -85,14 +85,32 @@
                 <div id="myPokemon" class="pt-4">
                 </div>
 
-                <form>
-                    <label>Add New Pokemon</label>
-                    <input id="pokemonInput" class="d-block border" type="text"></input><br />
-                    <input id="pokemonSubmit" class="btn btn-lg btn-secondary" type="submit" value="Submit"></input>
-                    <div id="pokemonError" class="text-danger"></div>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <form>
+                            <div class="form-group">
+                                <label>Add New Pokemon</label>
+                                <input id="pokemonInput" class="d-block border form-control" type="text"></input><br />
+                                <select id="pokeballType" class="form-control">
+                                    <option value="-1">Choose a pokeball if you want</option>
+                                    <option value="4">Pokeball</option>
+                                    <option value="3">Great ball</option>
+                                    <option value="2">Ultra ball</option>
+                                    <option value="1">Master ball</option>
+                                    <option value="5">Safari ball</option>
+                                    <option value="456">Park ball</option>
+                                    <option value="457">Sport ball</option>
+                                </select>
+                            </div>
+                            <input id="pokemonSubmit" class="btn btn-lg btn-secondary" type="submit"
+                                value="Submit"></input>
+                            <span id="pokemonError" class="text-danger"></span>
+                    </div>
+                </div>
                 </form>
-            </main>
         </div>
+        </main>
+    </div>
     </div>
     <footer class="footer mt-auto py-3 bg-dark shadow">
         <div class="container">
