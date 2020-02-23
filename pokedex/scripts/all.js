@@ -27,6 +27,23 @@ async function getAllPokemon(offset = 0, amount = 20) {
       result += ", ";
     }
     result = result.slice(0, -2);
+    result += "</p>";
+    result += "<p>Abilities: ";
+    for (let ability of pokemonDataJson.abilities) {
+      result += ability.ability.name;
+      result += ", ";
+    }
+    result = result.slice(0, -2);
+    result += "</p>";
+    result += "<p>Stats:";
+    result += "<dl>";
+    for (let stat of pokemonDataJson.stats) {
+      result += `<dt>${stat.stat.name}</dt>`;
+      result += `<dd>${stat.base_stat}</dd>`;
+    }
+    result = result.slice(0, -2);
+    result += "</dl>";
+    result += "</p>";
     result += `
     </div>
   </div>`;
