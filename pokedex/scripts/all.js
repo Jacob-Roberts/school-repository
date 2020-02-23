@@ -1,7 +1,7 @@
 const baseUrl = "https://pokeapi.co/api/v2";
 
 async function getAllPokemon(offset = 0, amount = 20) {
-  const url = `${baseUrl}/pokemon`;
+  const url = `${baseUrl}/pokemon?offset=${offset}&limit=${amount}`;
   let list = await fetch(url);
   let json = await list.json();
 
@@ -55,3 +55,18 @@ async function getAllPokemon(offset = 0, amount = 20) {
 }
 
 getAllPokemon();
+
+function removeAllActivities() {
+  Array.from(document.getElementsByClassName("page-item")).forEach(el => {
+    el.classList.remove("active");
+  });
+}
+
+Array.from(document.getElementsByClassName("paginator")).forEach(el => {
+  el.addEventListener("click", function() {
+    removeAllActivities();
+    el.parentElement.classList.add("active");
+    const offset = 20 * new Number(el.innerHTML);
+    getAllPokemon(offset);
+  });
+});
