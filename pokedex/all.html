@@ -16,10 +16,6 @@
 
     <link rel="stylesheet" href="/styles/site.css" />
     <title>Pokedex</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -43,14 +39,6 @@
                 aria-controls="collapseExample" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="ml-4 d-none d-sm-block">
-                <label class="mr-4 text-light mb-0">
-                    <strong>User:</strong>Jacob Roberts
-                </label>
-                <label class="text-light mb-0">
-                    <strong> Role:</strong>Employee
-                </label>
-            </div>
             <ul class="ml-auto mr-md-4 navbar-nav px-3 flex-row">
                 <li class="nav-item dropdown profile">
                     <a class="nav-link dropdown-toggle" href="#" id="manageAccountDropdown" data-toggle="dropdown"
@@ -74,7 +62,7 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/index.html">
+                            <a class="nav-link" href="/index.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="nav-icon feather-home">
@@ -85,21 +73,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/all.html">
+                            <a class="nav-link active" href="/all.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="nav-icon feather-file">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                     <polyline points="13 2 13 9 20 9"></polyline>
                                 </svg>
-                                All Pokemon
+                                All Pokemon <span class="sr-only">(current)</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </nav>
             <main role="main" class="ml-md-auto col-lg-10 px-4">
-
+                <div id="pokemonResults" class="pt-4">
+                </div>
             </main>
         </div>
     </div>
@@ -121,7 +110,7 @@
         crossorigin="anonymous"></script>
 
     <!-- My Scripts -->
-    <script src="/scripts/charges.js"></script>
+    <script src="/scripts/all.js"></script>
 </body>
 
 </html>

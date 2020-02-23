@@ -16,10 +16,6 @@
 
     <link rel="stylesheet" href="/styles/site.css" />
     <title>Pokedex</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -99,13 +95,23 @@
                 </div>
             </nav>
             <main role="main" class="ml-md-auto col-lg-10 px-4">
+                <h1>My Pokemon</h1>
+                <div id="myPokemon" class="pt-4">
+                </div>
 
+                <form>
+                    <label>Add New Pokemon</label>
+                    <input id="pokemonInput" class="d-block border" type="text"></input><br />
+                    <input id="pokemonSubmit" class="btn btn-lg btn-secondary" type="submit" value="Submit"></input>
+                    <div id="pokemonError" class="text-danger"></div>
+                </form>
             </main>
         </div>
     </div>
     <footer class="footer mt-auto py-3 bg-dark shadow">
         <div class="container">
-            <a class="offset-lg-2 col-lg-10 text-light" href="https://github.com/Jacob-Roberts/Timecard">Link to Github
+            <a class="offset-lg-2 col-lg-10 text-light"
+                href="https://github.com/Jacob-Roberts/school-repository/tree/master/pokedex">Link to Github
                 Repo</a>
         </div>
     </footer>
@@ -121,7 +127,7 @@
         crossorigin="anonymous"></script>
 
     <!-- My Scripts -->
-    <script src="/scripts/charges.js"></script>
+    <script src="/scripts/myPokedex.js"></script>
 </body>
 
 </html>
