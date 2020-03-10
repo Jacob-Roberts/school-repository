@@ -10,7 +10,7 @@ export const typeToColorMap = {
   dragon: "#6e39ed",
   psychic: "#f95788",
   ghost: "#705799",
-  fight: "#c03028",
+  fighting: "#c03028",
   dark: "#6f5846",
   fairy: "#dca5de",
   steel: "#b8b8d0",
@@ -19,6 +19,6 @@ export const typeToColorMap = {
   poison: "#9e429e"
 };
 
-export const darkTypeList = ["poison", "ghost", "dragon", "dark"];
+export const darkTypeList = ["poison", "ghost", "dragon", "dark", "fighting"];
 
 export const baseUrl = "https://pokeapi.co/api/v2";
