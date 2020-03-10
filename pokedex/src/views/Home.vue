@@ -41,7 +41,7 @@ export default {
   methods: {
     async addPokemon() {
       try {
-        const url = `${baseUrl}/pokemon/${this.search}`;
+        const url = `${baseUrl}/pokemon/${this.search.toLowerCase()}`;
 
         this.loading = true;
         let data = await fetch(url);
