@@ -6,7 +6,7 @@ import router from "./router";
 Vue.config.productionTip = false;
 
 let data = {
-  pokemon: [],
+  pokemon: []
 };
 
 new Vue({
