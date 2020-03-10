@@ -1,18 +1,20 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.config.productionTip = false;
 
-const baseUrl = "https://pokeapi.co/api/v2";
+Vue.use(BootstrapVue);
+
+export const baseUrl = "https://pokeapi.co/api/v2";
 
 let data = {
-  message: "Hello Vue!",
-  pokemonName: "",
-  loading: true,
-  errorMessage: "",
   pokemon: []
-},
+};
 
 new Vue({
   router,

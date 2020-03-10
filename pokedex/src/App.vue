@@ -1,8 +1,25 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="menu" id="menu">
+      <div class="brand" id="brand">
+        <router-link to="/">
+          <img src="/images/logo.png" />
+        </router-link>
+      </div>
+      <div class="side" id="side">
+        <router-link to="/browse">
+          <div class="browse">
+            <img src="/images/globe.png" />
+            <p>Browse</p>
+          </div>
+        </router-link>
+        <router-link to="/cart">
+          <div class="cart">
+            <img src="/images/love.png" />
+            <p>{{ itemsInCart }} items</p>
+          </div>
+        </router-link>
+      </div>
     </div>
     <router-view />
   </div>
@@ -10,10 +27,10 @@
 
 <style>
 #app {
+  margin-top: 10px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
