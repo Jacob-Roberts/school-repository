@@ -6,6 +6,7 @@
       <div class="form-group">
         <label>Add New Pokemon</label>
         <input
+          autocomplete="off"
           v-model="search"
           class="d-block border form-control"
           style="max-width: 400px;"
