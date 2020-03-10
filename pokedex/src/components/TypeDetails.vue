@@ -4,8 +4,8 @@
     <p>
       Weak Against:
       <label
-        class="ml-3 p-1"
         v-for="weakness in weaknessAttack"
+        :class="'ml-3 p-1 rounded ' + textColor(weakness)"
         :key="weakness"
         v-bind:style="{ background: color(weakness) }"
         >{{ weakness }}</label
@@ -14,8 +14,8 @@
     <p>
       Strong Against:
       <label
-        class="ml-3 p-1"
         v-for="strength in strengthAttack"
+        :class="'ml-3 p-1 rounded ' + textColor(strength)"
         :key="strength"
         v-bind:style="{ background: color(strength) }"
         >{{ strength }}</label
@@ -24,8 +24,8 @@
     <p>
       Ineffective Against:
       <label
-        class="ml-3 p-1"
         v-for="ineffective in ineffectiveAttack"
+        :class="'ml-3 p-1 rounded ' + textColor(ineffective)"
         :key="ineffective"
         v-bind:style="{ background: color(ineffective) }"
         >{{ ineffective }}</label
@@ -36,8 +36,8 @@
     <p>
       Weak Against:
       <label
-        class="ml-3 p-1"
         v-for="weakness in weaknessDefense"
+        :class="'ml-3 p-1 rounded ' + textColor(weakness)"
         :key="weakness"
         v-bind:style="{ background: color(weakness) }"
         >{{ weakness }}</label
@@ -46,8 +46,8 @@
     <p>
       Strong Against:
       <label
-        class="ml-3 p-1"
         v-for="strength in strengthDefense"
+        :class="'ml-3 p-1 rounded ' + textColor(strength)"
         :key="strength"
         v-bind:style="{ background: color(strength) }"
         >{{ strength }}</label
@@ -56,8 +56,8 @@
     <p>
       Invulnerable Against:
       <label
-        class="ml-3 p-1"
         v-for="invulnerable in invulnerableDefense"
+        :class="'ml-3 p-1 rounded ' + textColor(invulnerable)"
         :key="invulnerable"
         v-bind:style="{ background: color(invulnerable) }"
         >{{ invulnerable }}</label
@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import { typeToColorMap } from "../Constants";
+import { typeToColorMap, darkTypeList } from "../Constants";
 export default {
   name: "TypeDetails",
   props: {
@@ -76,9 +76,15 @@ export default {
   methods: {
     color(type) {
       return typeToColorMap[type];
+    },
+    textColor(type) {
+      return darkTypeList.some(i => i === type) ? "text-white" : "text-dark";
     }
   },
   computed: {
+    darkText() {
+      return darkTypeList.some(i => i === this.type.name);
+    },
     weaknessAttack() {
       return this.type.damage_relations.half_damage_to.map(i => i.name);
     },

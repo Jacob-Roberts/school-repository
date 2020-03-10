@@ -19,4 +19,6 @@ export const typeToColorMap = {
   poison: "#9e429e"
 };
 
+export const darkTypeList = ["poison", "ghost", "dragon", "dark"];
+
 export const baseUrl = "https://pokeapi.co/api/v2";

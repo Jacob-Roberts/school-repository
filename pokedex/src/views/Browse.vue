@@ -9,7 +9,8 @@
         <PokemonAccordian :pokemon="allPokemon" />
       </div>
       <b-pagination
-        class="p-4 justify-content-center"
+        align="fill"
+        class="p-4"
         v-model="currentPage"
         :total-rows="rows"
         :per-page="perPage"
