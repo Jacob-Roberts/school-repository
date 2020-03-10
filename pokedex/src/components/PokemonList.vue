@@ -17,6 +17,11 @@ export default {
   },
   props: {
     pokemon: Array
+  },
+  methods: {
+    deleteFromPokedex(pokemon) {
+      console.log(pokemon);
+    }
   }
 };
 </script>

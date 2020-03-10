@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import PokemonList from "../components/PokemonList.vue";
 import { baseUrl } from "../Constants";
 export default {
@@ -41,40 +40,20 @@ export default {
   },
   methods: {
     async addPokemon() {
-      try {
-        const url = `${baseUrl}/pokemon/${this.search}`;
+      const url = `${baseUrl}/pokemon/${this.search}`;
 
-        this.loading = true;
-        let response = await axios.get(url);
-        this.loading = false;
-        if (!response.status !== 200) {
-          this.errorMessage = response.statusText;
-        } else {
-          this.search = "";
-        }
-
-        this.$root.$data.pokemon.push(response.data);
-      } catch (error) {
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          // console.log(error.response.data);
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
-          this.errorMessage = `${error.response.status} ${error.response.data}`;
-        } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-          // http.ClientRequest in node.js
-          // console.log(error.request);
-          this.errorMessage = `${error.request}`;
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          // console.log("Error", error.message);
-          this.errorMessage = error.message;
-        }
-        // this.errorMessage = error.message;
+      this.loading = true;
+      let data = await fetch(url);
+      this.loading = false;
+      if (!data.ok) {
+        this.errorMessage = "No Pokemon found by that name";
+      } else {
+        this.search = "";
       }
+
+      let pokemon = await data.json();
+
+      this.$root.$data.pokemon.push(pokemon);
     }
   }
 };
