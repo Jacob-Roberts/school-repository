@@ -40,24 +40,27 @@ export default {
   },
   methods: {
     async addPokemon() {
-      try {
-        const url = `${baseUrl}/pokemon/${this.search.toLowerCase()}`;
+      this.errorMessage = "";
+      const url = `${baseUrl}/pokemon/${this.search.toLowerCase()}`;
 
-        this.loading = true;
-        let data = await fetch(url);
-        this.loading = false;
-        if (!data.ok) {
-          this.errorMessage = "No Pokemon found by that name";
-        } else {
-          this.search = "";
-        }
-
-        let pokemon = await data.json();
-
-        this.$root.$data.pokemon.push(pokemon);
-      } catch (exception) {
-        this.errorMessage = exception.message + " please try again later.";
+      this.loading = true;
+      let data = await fetch(url);
+      this.loading = false;
+      if (!data.ok) {
+        this.errorMessage = "No Pokemon found by that name";
+        return;
+      } else {
+        this.search = "";
       }
+
+      let pokemon = await data.json();
+
+      if (this.$root.$data.pokemon.some(i => i.id === pokemon.id)) {
+        this.errorMessage = "You already caught that pokemon";
+        return;
+      }
+
+      this.$root.$data.pokemon.push(pokemon);
     }
   }
 };
