@@ -56,7 +56,7 @@ export default {
 
         this.$root.$data.pokemon.push(pokemon);
       } catch (exception) {
-        console.error(exception);
+        this.errorMessage = exception.message + " please try again later.";
       }
     }
   }
