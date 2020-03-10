@@ -6,7 +6,8 @@
         type="dark"
         variant="dark"
         toggleable="lg"
-        class="fixed-top flex-lg-nowrap p-0 shadow"
+        class="flex-lg-nowrap p-0 shadow"
+        fixed="top"
       >
         <b-navbar-brand class="col-lg-2 col-md-12 mr-0" to="/">
           <svg
@@ -34,17 +35,7 @@
             </g>
           </svg>
         </b-navbar-brand>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapseExample"
-          aria-controls="collapseExample"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <b-navbar-toggle target="sidebar"> </b-navbar-toggle>
         <ul class="ml-auto mr-md-4 navbar-nav px-3 flex-row">
           <li class="nav-item dropdown profile">
             <a class="nav-link disabled" href="#">
@@ -57,14 +48,11 @@
       </b-navbar>
     </header>
     <!-- Container to hold content and sidebar -->
-    <div class="container-fluid">
-      <div class="row">
+    <b-container fluid="true">
+      <b-row>
         <!-- Sidebar -->
-        <nav
-          class="col-lg-2 collapse d-lg-block bg-light sidebar"
-          id="collapseExample"
-        >
-          <div class="sidebar-sticky">
+        <b-collapse id="sidebar" class="sidebar bg-light d-lg-block col-lg-2">
+          <nav class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <router-link class="nav-link" to="/">
@@ -111,8 +99,8 @@
                 </router-link>
               </li>
             </ul>
-          </div>
-        </nav>
+          </nav>
+        </b-collapse>
         <main role="main" class="ml-md-auto col-lg-10 px-4">
           <noscript>
             <strong
@@ -123,8 +111,8 @@
           </noscript>
           <router-view />
         </main>
-      </div>
-    </div>
+      </b-row>
+    </b-container>
     <footer class="footer mt-auto py-3 bg-dark shadow">
       <div class="container">
         <a

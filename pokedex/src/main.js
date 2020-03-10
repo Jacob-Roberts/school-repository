@@ -5,8 +5,6 @@ import router from "./router";
 
 Vue.config.productionTip = false;
 
-export const baseUrl = "https://pokeapi.co/api/v2";
-
 let data = {
   pokemon: []
 };

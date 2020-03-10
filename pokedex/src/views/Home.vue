@@ -2,18 +2,20 @@
   <div class="home">
     <h1>My Pokemon</h1>
     <hr />
-    <div class="form-group">
-      <label>Add New Pokemon</label>
-      <input
-        v-model="search"
-        class="d-block border form-control"
-        style="max-width: 400px;"
-        type="text"
-      /><br />
-    </div>
-    <button v-on:click="addPokemon" class="btn btn-lg btn-secondary">
-      Add
-    </button>
+    <form v-on:submit.prevent="addPokemon">
+      <div class="form-group">
+        <label>Add New Pokemon</label>
+        <input
+          v-model="search"
+          class="d-block border form-control"
+          style="max-width: 400px;"
+          type="text"
+        /><br />
+      </div>
+      <button type="submit" class="btn btn-lg btn-secondary">
+        Add
+      </button>
+    </form>
     <span class="text-danger">{{ errorMessage }}</span>
 
     <PokemonList :pokemon="pokemon" />
@@ -22,7 +24,7 @@
 
 <script>
 import PokemonList from "../components/PokemonList.vue";
-import { baseUrl } from "../main";
+import { baseUrl } from "../Constants";
 export default {
   name: "Home",
   components: {
